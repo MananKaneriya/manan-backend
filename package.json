@@ -1,0 +1,17 @@
+{
+  "name": "manan-backend",
+  "version": "1.0.0",
+  "description": "a backend learning journey of manan",
+  "keywords": [
+    "javascript",
+    "backend",
+    "manan"
+  ],
+  "license": "ISC",
+  "author": "manan kaneriya",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
