@@ -1,8 +1,7 @@
 import {asyncHandler} from "../utils/asyncHandler.js";
 import {ApiError} from "../utils/ApiError.js";
 import {User} from "../models/user.model.js";
-import { uploadToCloudinary } from "../utils/cloudinary.js";
-import { upload } from "../middlewares/multer.middleware.js";
+import { uploadOnCloudinary } from "../utils/cloudinary.js"; 
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 
@@ -38,11 +37,11 @@ const existedUser = await User.findOne({ $or: [{ username }, { email }] })
         throw new ApiError(400, "Avatar file is required")
     }
 
-    const avatar = await uploadToCloudinary(avatarLocalPath)
+    const avatar = await uploadOnCloudinary(avatarLocalPath)
     const coverImage = await uploadOnCloudinary(coverImageLocalPath) 
 
     if(!avatar){
-        throw new ApiError(400, "Avatar file is requiured")
+        throw new ApiError(400, "Avatar file is requiured") 
     }
 
     const user = await User.create({
